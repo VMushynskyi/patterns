@@ -1,4 +1,4 @@
-package patterns.Iterator;
+package patterns.iterator;
 
 public interface ProductContainer {
     ProductIterator createIterator();

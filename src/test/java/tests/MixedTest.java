@@ -1,8 +1,8 @@
 package tests;
 
 import org.testng.annotations.Test;
-import patterns.TempalteMethod.Shop;
-import patterns.TempalteMethod.SportsShop;
+import patterns.tempalteMethod.Shop;
+import patterns.tempalteMethod.SportsShop;
 import patterns.builder.SignUpBuilder;
 import patterns.buisnessobjects.LogInBO;
 import patterns.buisnessobjects.MainBO;

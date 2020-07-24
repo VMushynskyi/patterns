@@ -1,4 +1,4 @@
-package patterns.TempalteMethod;
+package patterns.tempalteMethod;
 
 public abstract class Shop {
     public final void choosing(String sectionName, String productName){

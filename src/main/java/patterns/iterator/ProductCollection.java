@@ -1,4 +1,4 @@
-package patterns.Iterator;
+package patterns.iterator;
 
 import static patterns.pageObject.pages.SportAndFitnessPage.getArraysOfProducts;
 

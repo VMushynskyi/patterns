@@ -1,15 +1,15 @@
-package patterns.TempalteMethod;
+package patterns.tempalteMethod;
 
 import org.openqa.selenium.WebElement;
 import patterns.pageObject.pages.LeftMenuPage;
 
 import java.util.List;
 
-public class SportsShop extends Shop {
+public class Automotive extends Shop {
 
     private LeftMenuPage leftMenuPage;
 
-    public SportsShop(){
+    public Automotive(){
         leftMenuPage = new LeftMenuPage();
     }
 

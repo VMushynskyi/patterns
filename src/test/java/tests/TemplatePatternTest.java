@@ -1,8 +1,8 @@
 package tests;
 
 import org.testng.annotations.Test;
-import patterns.TempalteMethod.Shop;
-import patterns.TempalteMethod.SportsShop;
+import patterns.tempalteMethod.Shop;
+import patterns.tempalteMethod.SportsShop;
 
 public class TemplatePatternTest extends BaseTest {
     @Test(description = "test template method pattern")

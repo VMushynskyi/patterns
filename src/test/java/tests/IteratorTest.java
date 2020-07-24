@@ -1,10 +1,10 @@
 package tests;
 
 import org.testng.annotations.Test;
-import patterns.Iterator.ProductCollection;
-import patterns.Iterator.ProductIterator;
-import patterns.TempalteMethod.Shop;
-import patterns.TempalteMethod.SportsShop;
+import patterns.iterator.ProductCollection;
+import patterns.iterator.ProductIterator;
+import patterns.tempalteMethod.Shop;
+import patterns.tempalteMethod.SportsShop;
 
 public class IteratorTest extends BaseTest {
     @Test(description = "iterator pattern")
