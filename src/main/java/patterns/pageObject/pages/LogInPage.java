@@ -6,17 +6,17 @@ import patterns.decorator.elements.TextInput;
 import patterns.pageObject.BasePage;
 
 public class LogInPage extends BasePage {
-    @FindBy(xpath = "//input[contains(@id,'ap_email')]")
+    @FindBy(id = "user_login")
     private TextInput emailInput;
 
-    @FindBy(xpath = "//input[contains(@id,'ap_password')]")
+    @FindBy(id = "user_pass")
     private TextInput passwordInput;
 
     @FindBy(xpath = "//input[contains(@id,'continue')]")
     private Button continueButton;
 
-    @FindBy(xpath = "//input[contains(@id,'signInSubmit')]")
-    private Button signInButton;
+    @FindBy(id = "wp-submit")
+    private Button logIn;
 
     public void setEmail(String email){
         emailInput.sendKeys(email);
@@ -30,7 +30,7 @@ public class LogInPage extends BasePage {
         continueButton.click();
     }
 
-    public void clickSignInButton(){
-        signInButton.click();
+    public void clickLogInButton(){
+        logIn.click();
     }
 }

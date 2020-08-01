@@ -11,6 +11,10 @@ public class MainBO {
     }
 
     public void startLogin(){
-        mainPage.clickMyAccountButton();
+        mainPage.clickUserLinkButton();
+        mainPage.clickAddNewButton();
+
+        // will move
+
     }
 }

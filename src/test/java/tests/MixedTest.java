@@ -1,42 +1,36 @@
 package tests;
 
 import org.testng.annotations.Test;
-import patterns.tempalteMethod.Shop;
-import patterns.tempalteMethod.SportsShop;
-import patterns.builder.SignUpBuilder;
+import patterns.pageObject.pages.AddNewUserPage;
+import patterns.builder.RegisterBuilder;
 import patterns.buisnessobjects.LogInBO;
 import patterns.buisnessobjects.MainBO;
-import patterns.buisnessobjects.SportAndFitnessBO;
-import patterns.pageObject.pages.ShippingAddressPage;
-import patterns.strategy.CardStrategy;
-import patterns.strategy.PayingMethods;
 
 public class MixedTest extends BaseTest {
     @Test(description = "testing mixed patterns")
     public void verifySelectingSectionAndProduct() {
+        LogInBO logInBO = new LogInBO();
+        logInBO.login("opensourcecms","opensourcecms");
         MainBO mainBO = new MainBO();
         mainBO.startLogin();
-        LogInBO logInBO = new LogInBO();
-        logInBO.login("jokarp4556@gmail.com","ppppp55555");
-        Shop manProduct = new SportsShop();
-        manProduct.choosing("Sports and Outdoors","Sports & Fitness");
-        SportAndFitnessBO sportAndFitnessBO = new SportAndFitnessBO();
-        sportAndFitnessBO.orderedFirstProduct();
-        logInBO.signInWithEmail("jokarp4556@gmail.com");
-        ShippingAddressPage shippingAddressPage = new ShippingAddressPage();
-        SignUpBuilder.newSignUp()
-                .setFullName("Tom")
-                .setFirstAddress("firstStreet")
-                .setSecondAddress("secondStreet")
-                .setCity("Lviv")
-                .setRegion("Frankivskyi")
-                .setZipCode("79000")
-                .setCountry("Ukraine")
-                .setPhoneNumber("0693216598")
+//        Shop manProduct = new SportsShop();
+//        manProduct.choosing("Sports and Outdoors","Sports & Fitness");
+//        SportAndFitnessBO sportAndFitnessBO = new SportAndFitnessBO();
+//        sportAndFitnessBO.orderedFirstProduct();
+//        logInBO.signInWithEmail("jokarp4556@gmail.com");
+        AddNewUserPage addNewUserPAge = new AddNewUserPage();
+        RegisterBuilder.newUser()
+                .setUserName("Heoo")
+                .setFirstName("Tom")
+                .setLastName("To")
+                .setEmail("fitonap507@mailvk.net")
+                .setWebSite("https://s1.demo.opensourcecms.com/")
+                .setRole("Editor")
                 .build()
-                .createAccount(shippingAddressPage);
-        PayingMethods payingMethods = new PayingMethods();
-        payingMethods.setPayingStrategy(new CardStrategy());
-        payingMethods.doPay();
+                .createAccount(addNewUserPAge);
+
+//        PayingMethods payingMethods = new PayingMethods();
+//        payingMethods.setPayingStrategy(new CardStrategy());
+//        payingMethods.doPay();
     }
 }

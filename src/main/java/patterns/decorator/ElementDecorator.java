@@ -19,7 +19,7 @@ public class ElementDecorator extends DefaultFieldDecorator {
   @Override
   public Object decorate(ClassLoader loader, Field field){
 
-    ElementLocator locator =factory.createLocator(field);
+    ElementLocator locator = factory.createLocator(field);
 
     if(Button.class.isAssignableFrom(field.getType())){
       final Button button = new Button(proxyForLocator(loader,locator));

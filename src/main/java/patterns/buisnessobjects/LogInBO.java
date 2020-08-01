@@ -12,14 +12,14 @@ public class LogInBO {
 
     public void login(String email, String password){
         logInPage.setEmail(email);
-        logInPage.clickContinueButton();
+//        logInPage.clickContinueButton();
         logInPage.setPassword(password);
-        logInPage.clickSignInButton();
+        logInPage.clickLogInButton();
     }
 
     public void signInWithEmail(String email){
         logInPage.setEmail(email);
-        logInPage.clickSignInButton();
+        logInPage.clickLogInButton();
     }
 
 }
