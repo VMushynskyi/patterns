@@ -1,26 +1,25 @@
 package patterns.pageObject.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import patterns.decorator.elements.PageElement;
 import patterns.pageObject.BasePage;
-
-import java.util.List;
 
 import static patterns.factory.DriverFactory.getDriver;
 
 public class LeftMenuPage extends BasePage {
 
-    @FindBy(xpath = "//a[@id = 'nav-hamburger-menu']")
-    private PageElement menuLink;
+    @FindBy(xpath="//div[contains(text(),'Appearance')]")
+    private PageElement appearanceLink;
 
-    public  List<WebElement> getAllSection() {
-        menuLink.click();
-        return getDriver().findElements(By.xpath("//li//a[@class='hmenu-item']"));
+    @FindBy(xpath="//a[contains(text(),'Themes')]")
+    private PageElement themesLink;
+
+    public void selectMenu(String menuItem) {
+        getDriver().findElement(By.xpath(String.format("//div[contains(text(),'%s')]",menuItem))).click();
     }
 
-    public WebElement getDesiredSubSection(String productSectionName) {
-       return getDriver().findElement(By.xpath("//a[contains(text(),'"+productSectionName+"')]"));
+    public void selectSubMenu(String subMenuItem) {
+        getDriver().findElement(By.xpath(String.format("//a[contains(text(),'%s')]",subMenuItem))).click();
     }
 }

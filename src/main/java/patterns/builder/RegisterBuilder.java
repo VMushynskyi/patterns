@@ -1,9 +1,8 @@
 package patterns.builder;
 
-import com.processor.Getter;
-import patterns.pageObject.pages.AddNewUserPage;
 
-@Getter
+import patterns.pageObject.pages.users.AddNewUserPage;
+
 public class RegisterBuilder {
 
     private String userName;
@@ -25,30 +24,30 @@ public class RegisterBuilder {
     public static User newUser() {
         return new User();
     }
-//
-//    public String getUserName() {
-//        return userName;
-//    }
-//
-//    public String getFirstName() {
-//        return firstName;
-//    }
-//
-//    public String getLastName() {
-//        return lastName;
-//    }
-//
-//    public String getEmail() {
-//        return email;
-//    }
-//
-//    public String getWebSite() {
-//        return webSite;
-//    }
-//
-//    public String getRole() {
-//        return role;
-//    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getWebSite() {
+        return webSite;
+    }
+
+    public String getRole() {
+        return role;
+    }
 
     public static final class User
     {

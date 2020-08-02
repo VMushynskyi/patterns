@@ -1,36 +1,35 @@
 package tests;
 
 import org.testng.annotations.Test;
-import patterns.pageObject.pages.AddNewUserPage;
 import patterns.builder.RegisterBuilder;
 import patterns.buisnessobjects.LogInBO;
 import patterns.buisnessobjects.MainBO;
+import patterns.pageObject.pages.users.AddNewUserPage;
+import patterns.strategy.SelectingMethods;
+import patterns.strategy.menustrategy.PagesStrategy;
+import patterns.strategy.menustrategy.ToolsStrategy;
 
 public class MixedTest extends BaseTest {
     @Test(description = "testing mixed patterns")
     public void verifySelectingSectionAndProduct() {
         LogInBO logInBO = new LogInBO();
         logInBO.login("opensourcecms","opensourcecms");
+        SelectingMethods selectingMethods = new SelectingMethods();
+        selectingMethods.setSelectingMenuStrategy(new ToolsStrategy());
+        selectingMethods.doSelecting("Export");
         MainBO mainBO = new MainBO();
         mainBO.startLogin();
-//        Shop manProduct = new SportsShop();
-//        manProduct.choosing("Sports and Outdoors","Sports & Fitness");
-//        SportAndFitnessBO sportAndFitnessBO = new SportAndFitnessBO();
-//        sportAndFitnessBO.orderedFirstProduct();
-//        logInBO.signInWithEmail("jokarp4556@gmail.com");
-        AddNewUserPage addNewUserPAge = new AddNewUserPage();
+        AddNewUserPage addNewUserPage = new AddNewUserPage();
         RegisterBuilder.newUser()
-                .setUserName("Heoo")
+                .setUserName("Heo")
                 .setFirstName("Tom")
                 .setLastName("To")
-                .setEmail("fitonap507@mailvk.net")
+                .setEmail("fitona507@mailvk.net")
                 .setWebSite("https://s1.demo.opensourcecms.com/")
                 .setRole("Editor")
                 .build()
-                .createAccount(addNewUserPAge);
-
-//        PayingMethods payingMethods = new PayingMethods();
-//        payingMethods.setPayingStrategy(new CardStrategy());
-//        payingMethods.doPay();
+                .createAccount(addNewUserPage);
+//        selectingMethods.setSelectingMenuStrategy(new PagesStrategy());
+//        selectingMethods.doSelecting("All Pages");
     }
 }

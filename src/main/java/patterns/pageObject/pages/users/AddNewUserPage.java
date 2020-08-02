@@ -1,4 +1,4 @@
-package patterns.pageObject.pages;
+package patterns.pageObject.pages.users;
 
 import org.openqa.selenium.support.FindBy;
 import patterns.builder.RegisterBuilder;
@@ -39,12 +39,12 @@ public class AddNewUserPage extends BasePage {
   }
 
   private void setUserFields(RegisterBuilder registerBuilder) {
-//    setUserNameInput(registerBuilder.getUserName());
-//    setFirstNameInput(registerBuilder.getFirstName());
-//    setLastNameInput(registerBuilder.getLastName());
-//    setEmailInput(registerBuilder.getEmail());
-//    setWebSite(registerBuilder.getWebSite());
-//    setRole(registerBuilder.getRole());
+    setUserNameInput(registerBuilder.getUserName());
+    setFirstNameInput(registerBuilder.getFirstName());
+    setLastNameInput(registerBuilder.getLastName());
+    setEmailInput(registerBuilder.getEmail());
+    setWebSite(registerBuilder.getWebSite());
+    setRole(registerBuilder.getRole());
   }
 
   private void setWebSite(String url) {
@@ -60,11 +60,11 @@ public class AddNewUserPage extends BasePage {
   }
 
   private void setFirstNameInput(String name) {
-    try {
-      Thread.sleep(5000);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
+//    try {
+//      Thread.sleep(5000);
+//    } catch (InterruptedException e) {
+//      e.printStackTrace();
+//    }
     userNameInput.sendKeys(name);
   }
 

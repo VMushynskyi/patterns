@@ -1,20 +1,21 @@
 package patterns.iterator;
 
-import static patterns.pageObject.pages.SportAndFitnessPage.getArraysOfProducts;
 
-public class ProductCollection implements ProductContainer {
+import static patterns.pageObject.pages.appearance.ThemesPage.getArraysOfThemes;
 
-    public ProductCollection(){
+public class ThemeCollection implements ThemesContainer {
+
+    public ThemeCollection(){
     }
 
-    public String elements[] = getArraysOfProducts();
+    public String elements[] = getArraysOfThemes();
 
     @Override
-    public ProductIterator createIterator() {
+    public ThemesIterator createIterator() {
         return new ItemsIterator();
     }
 
-    private class ItemsIterator implements ProductIterator {
+    private class ItemsIterator implements ThemesIterator {
         int number;
 
         @Override
